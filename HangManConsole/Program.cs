@@ -10,6 +10,9 @@ namespace HangManConsole
     {
         static void Main(string[] args)
         {
+            //Where saved game data is stored
+            ProgramUI game = new ProgramUI();
+            game.Run();
         }
     }
 }
