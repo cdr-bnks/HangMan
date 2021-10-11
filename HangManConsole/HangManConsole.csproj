@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HangManClassLibrary\HangManClassLibrary.csproj">
+      <Project>{09A8C1DD-6EB5-4D65-8F34-412E7A2C5578}</Project>
+      <Name>HangManClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
