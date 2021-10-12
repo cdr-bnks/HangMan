@@ -34,9 +34,57 @@ namespace HangManConsole
             bool keepRunning = true;
             while (keepRunning)
             {
-                 Console.WriteLine("Hello and Welcome to Hangman; where you'll play against family, friends, and aquintances. \n" +
-                "Try and beat your highscore by pressing the timed option. \n" +
-                "There will be new updated words every week, so the fun will never end, enjoy!");
+                
+                Console.WriteLine("Hello and Welcome to Hangman; where you'll play against family, friends, and aquintances. \n" +
+               "Try and beat your highscore by pressing the timed option. \n" +
+               "There will be new updated words every week, so the fun will never end, enjoy!: \n" +
+               "Enter the number of the option you would like to select: \n" +
+               "1. StartGame \n" +
+               "2. Play New Version \n" +
+               "3. Score Board \n" +
+               "4. Tutorial \n" +
+               "5. Game Rating \n" +
+               "6. Creators \n" +
+               "7. Age Group \n" +
+               "8. Dictionary \n" +
+               "9. Exit");
+
+                string userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "1":
+                        startGame();
+                        break;
+                    case "2":
+                        playNewVersion();
+                        break;
+                    case "3":
+                        scoreBoard();
+                        break;
+                    case "4":
+                        tutorial();
+                        break;
+                    case "5":
+                        gameRating();
+                        break;
+                    case "6":
+                        creators();
+                        break;
+                    case "7":
+                        ageGroup();
+                        break;
+                    case "8":
+                        dictionary();
+                        break;
+                    case "9":
+                        keepRunning = false;
+                        break;
+                    default:
+                        Console.WriteLine("Please enter in a valid number between 1 and 9. \n" + "Press any key to continue...");
+                        Console.ReadKey();
+                        break;
+                }
+
                 // Need to Reference the HangManClasLibrary.cs to ProgramUI.cs. we will put the Sources on the Console soon.
                 
                 /* StartGame - ListOfWords
@@ -49,9 +97,11 @@ namespace HangManConsole
                  * Dictionary
                  * Exit
                  */
+
                 // We will construct the rest of the while loop (keepRunning) & also attempt to debug/test our gaming program. Once this is complete we should be all set. *High five*
             }
             {
+                
                 string[] listOfWords = new string[13];
                 Random randGuess = new Random();
                 var aToZ = randGuess.Next(1, 13);
@@ -90,10 +140,50 @@ namespace HangManConsole
             
             
         }
-	
 
-	
-         
-      //603783ea2eb6e5acb9d02235171b699c7a648632
+        private void dictionary()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ageGroup()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void creators()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void gameRating()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void tutorial()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void scoreBoard()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void playNewVersion()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void startGame()
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
+        //603783ea2eb6e5acb9d02235171b699c7a648632
     }
 }
