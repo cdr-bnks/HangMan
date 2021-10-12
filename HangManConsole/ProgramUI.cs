@@ -26,7 +26,7 @@ namespace HangManConsole
             // Prototype 
          public void Run()
         {
-            ListOfWordsTwo();
+            //ListOfWordsTwo();
             RunMenu();
         }
         public void RunMenu()
@@ -52,14 +52,14 @@ namespace HangManConsole
                 // We will construct the rest of the while loop (keepRunning) & also attempt to debug/test our gaming program. Once this is complete we should be all set. *High five*
             }
             {
-                ListOfWords = new string[13];
+                string[] listOfWords = new string[13];
                 Random randGuess = new Random();
                 var aToZ = randGuess.Next(1, 13);
-                string unknownWord = ListOfWords[aToZ];
-                char [] guess = new char[unknownWord.Length];
+                string unknownWord = listOfWords[aToZ];
+                char[] guess = new char[unknownWord.Length];
                 Console.WriteLine("Enter your guess here, please:");
 
-                for(int g = 0; g < unknownWord.Length: g ++ )
+                for(int g = 0; g < unknownWord.Length; g ++ )
                     guess[g] = '_';
                 while (true)
                 {
@@ -71,8 +71,15 @@ namespace HangManConsole
                     }
                     Console.WriteLine(guess);
                 }
-                string  (// Incorrect character the user inputs Console.Writeline (("switch case")) [1 head, 2 neck, 3 torso, 4 leftArm, 5 rightArm, 6 rightLeg, 7 rightFoot, 8 leftLeg, 9 leftFoot, default, Console.Writline(("HangMan, Want to Retry?"]))
-                foreach(// Complete answer the user inputs Console.Writline("Winner!!!"))
+                /*string userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "unkownWord":
+                        guess();
+                        break;
+                }
+                    (// Incorrect character the user inputs Console.Writeline (("switch case")) [1 head, 2 neck, 3 torso, 4 leftArm, 5 rightArm, 6 rightLeg, 7 rightFoot, 8 leftLeg, 9 leftFoot, default, Console.Writline(("HangMan, Want to Retry?"]))
+                foreach(// Complete answer the user inputs Console.Writline("Winner!!!"))*/
 
 
                 
