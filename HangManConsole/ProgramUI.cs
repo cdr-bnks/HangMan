@@ -178,7 +178,25 @@ namespace HangManConsole
 
         private void startGame()
         {
-            throw new NotImplementedException();
+             string[] listOfWords = new string[13];
+                Random randGuess = new Random();
+                var aToZ = randGuess.Next(1, 13);
+                string unknownWord = listOfWords[aToZ];
+                char[] guess = new char[unknownWord.Length];
+                Console.WriteLine("Enter your guess here, please:");
+
+                for(int g = 0; g < unknownWord.Length; g ++ )
+                    guess[g] = '_';
+                while (true)
+                {
+                    char userGuess = char.Parse(Console.ReadLine());
+                    for (int p = 0; p < unknownWord.Length; p++)
+                    {
+                        if(userGuess == unknownWord[p])
+                            guess[p] = userGuess;
+                    }
+                    Console.WriteLine(guess);
+            
         }
 
 
