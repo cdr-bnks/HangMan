@@ -129,7 +129,7 @@ namespace HangManConsole
                         break;
                 }
                     (// Incorrect character the user inputs Console.Writeline (("switch case")) [1 head, 2 neck, 3 torso, 4 leftArm, 5 rightArm, 6 rightLeg, 7 rightFoot, 8 leftLeg, 9 leftFoot, default, Console.Writline(("HangMan, Want to Retry?"]))
-                foreach(// Complete answer the user inputs Console.Writline("Winner!!!"))*/
+                foreach(// Complete answer the user inputs Console.Writline("Winner!!!"))
 
 
                 
@@ -178,7 +178,90 @@ namespace HangManConsole
 
         private void startGame()
         {
-             string[] listOfWords = new string[13];
+              
+            Console.Clear();
+             
+
+                Random random = new Random((int)DateTime.Now.Ticks);
+
+                string[] wordList = { "Elvenfifty", "Software", "Bootcamp", "Developer", "Indexhtml", "Indexcss", "Code", "Challenges", "Learninggym", "Coffee","Fuel", "Csharp", "Functions" };
+
+                string usersGuess = wordList[random.Next(0, wordList.Length)];
+                string usersWord = usersGuess.ToUpper(); 
+
+
+
+
+
+                StringBuilder displayToUser = new StringBuilder(usersGuess.Length);
+                for (int g = 0; g < usersGuess.Length; g++)
+                    displayToUser.Append('*');
+                List<char> validInput = new List<char>();
+                List<char> invalidInput = new List<char>();
+
+                int limbs = 11;
+                bool userwin = false;
+                int wordShown = 0;
+
+                string input;
+                char userInput;
+
+                while (userwin && limbs > 0)
+                {
+                    Console.WriteLine("Place guess here:");
+                    input = Console.ReadLine().ToUpper();
+                    userInput = input[0];
+
+                    if (validInput.Contains(userInput))
+                    {
+                        Console.WriteLine("Repeated letter '{0}', input another word!", userInput);
+                        continue;
+                    }
+                    else if (invalidInput.Contains(userInput))
+                    {
+                        Console.WriteLine("Incorrect letter '{0}' , 10 more tries!", userInput);
+                        continue;
+
+
+                    }
+                    if (usersWord.Contains(userInput))
+                    {
+                        validInput.Add(userInput);
+                        for(int g = 0; g < usersWord.Length; g++)
+                        {
+                            if(usersWord[g] == userInput)
+                            {
+                                displayToUser[g] = usersWord[g];
+                                wordShown++;
+                            }
+                        }
+                        if(wordShown == usersWord.Length)
+                        {
+                            userwin = true;
+                        }
+                    }
+                    else
+                    {
+                        invalidInput.Add(userInput);
+                        Console.WriteLine("Not quite, letter's not matching '{0}' give it another go", userInput);
+                        limbs++;
+                    }
+                    Console.WriteLine(displayToUser.ToString());
+
+
+
+                }
+                if (userwin)
+                    Console.WriteLine("Hooray, you win!");
+                else
+                    Console.WriteLine("Better Luck next time. it was '{0}'", usersWord);
+                Console.WriteLine("Exit by pressing any key...");
+
+
+                Console.ReadLine();
+        
+        
+             /*string[] listOfWords = new string[13];
                 Random randGuess = new Random();
                 var aToZ = randGuess.Next(1, 13);
                 string unknownWord = listOfWords[aToZ];
@@ -195,7 +278,7 @@ namespace HangManConsole
                         if(userGuess == unknownWord[p])
                             guess[p] = userGuess;
                     }
-                    Console.WriteLine(guess);
+                    Console.WriteLine(guess);*/
             
         }
 
