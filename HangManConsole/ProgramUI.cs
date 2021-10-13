@@ -178,16 +178,19 @@ namespace HangManConsole
 
         private void startGame()
         {
-              
-            Console.Clear();
-             
+             {
+            bool keeprunning = true;
+            while (keeprunning)
+            {
+                Console.Clear();
+
 
                 Random random = new Random((int)DateTime.Now.Ticks);
 
-                string[] wordList = { "Elvenfifty", "Software", "Bootcamp", "Developer", "Indexhtml", "Indexcss", "Code", "Challenges", "Learninggym", "Coffee","Fuel", "Csharp", "Functions" };
+                string[] wordList = { "Elvenfifty", "Software", "Bootcamp", "Developer", "Indexhtml", "Indexcss", "Code", "Challenges", "Learninggym", "Coffee", "Fuel", "Csharp", "Functions" };
 
                 string usersGuess = wordList[random.Next(0, wordList.Length)];
-                string usersWord = usersGuess.ToUpper(); 
+                string usersWord = usersGuess.ToUpper();
 
 
 
@@ -206,7 +209,7 @@ namespace HangManConsole
                 string input;
                 char userInput;
 
-                while (userwin && limbs > 0)
+                while (!userwin && limbs > 0)
                 {
                     Console.WriteLine("Place guess here:");
                     input = Console.ReadLine().ToUpper();
@@ -227,15 +230,15 @@ namespace HangManConsole
                     if (usersWord.Contains(userInput))
                     {
                         validInput.Add(userInput);
-                        for(int g = 0; g < usersWord.Length; g++)
+                        for (int g = 0; g < usersWord.Length; g++)
                         {
-                            if(usersWord[g] == userInput)
+                            if (usersWord[g] == userInput)
                             {
                                 displayToUser[g] = usersWord[g];
                                 wordShown++;
                             }
                         }
-                        if(wordShown == usersWord.Length)
+                        if (wordShown == usersWord.Length)
                         {
                             userwin = true;
                         }
@@ -259,27 +262,10 @@ namespace HangManConsole
 
 
                 Console.ReadLine();
-        
-        
-             /*string[] listOfWords = new string[13];
-                Random randGuess = new Random();
-                var aToZ = randGuess.Next(1, 13);
-                string unknownWord = listOfWords[aToZ];
-                char[] guess = new char[unknownWord.Length];
-                Console.WriteLine("Enter your guess here, please:");
+                Console.ReadKey();
 
-                for(int g = 0; g < unknownWord.Length; g ++ )
-                    guess[g] = '_';
-                while (true)
-                {
-                    char userGuess = char.Parse(Console.ReadLine());
-                    for (int p = 0; p < unknownWord.Length; p++)
-                    {
-                        if(userGuess == unknownWord[p])
-                            guess[p] = userGuess;
-                    }
-                    Console.WriteLine(guess);*/
-            
+                Console.WriteLine(keeprunning); 
+           
         }
 
 
