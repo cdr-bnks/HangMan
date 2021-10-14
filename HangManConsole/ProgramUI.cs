@@ -153,7 +153,11 @@ namespace HangManConsole
 
         private void creators()
         {
-            throw new NotImplementedException();
+            
+            
+            Console.WriteLine("The Creators of this Hangman program are Garry Banks & Anna Heselbarth.\n" +
+                "Publication date: 2021/13/10 ");
+            
         }
 
         private void gameRating()
@@ -163,7 +167,11 @@ namespace HangManConsole
 
         private void tutorial()
         {
-            throw new NotImplementedException();
+             Console.WriteLine("How To play:\n" +
+                "1st step: Input a valid guess for each word that you recieve!\n" +
+                "2nd step: If answer is invalid each limb will be add to your Hangman.\n " +
+                "Once your Hangman is complete with all 11 limbs you Lose!\n" +
+                "3rd step: Have Fun and Enjoy! ");
         }
 
         private void scoreBoard()
